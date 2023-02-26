@@ -1,5 +1,5 @@
-import {createElement} from "../render";
-import {getUserGrade} from "../utils";
+import {createElement} from '../render';
+import {getUserGrade} from '../utils';
 
 function createUserTemplate(watchedMoviesCount) {
   return(`

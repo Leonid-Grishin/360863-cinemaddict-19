@@ -1,11 +1,11 @@
-import {createElement} from "../render";
+import {createElement} from '../render';
 
 function createFilmContainerTemplate(isExtra, title) {
   return (`
     <section class="films-list ${isExtra ? 'films-list--extra' : '' }">
       <h2 class="films-list__title ${title ? title : 'visually-hidden'}">${title ? title : 'All movies. Upcoming'}</h2>
     </section>
-  `)
+  `);
 }
 
 export default class FilmContainerView {

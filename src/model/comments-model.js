@@ -1,4 +1,4 @@
-import {mockComments} from "../mock/comments";
+import {mockComments} from '../mock/comments';
 
 export default class CommentsModel {
   #comments = mockComments;

@@ -1,8 +1,8 @@
-import FilmListView from "../view/film-list-view";
-import {render} from "../render";
-import {TOP_RATED_CARDS_TO_SHOW} from "../const";
-import CardView from "../view/card-view";
-import FilmContainerView from "../view/film-container-view";
+import FilmListView from '../view/film-list-view';
+import {render} from '../render';
+import {TOP_RATED_CARDS_TO_SHOW} from '../const';
+import CardView from '../view/card-view';
+import FilmContainerView from '../view/film-container-view';
 
 export default class TopRatedFilmsPresenter {
   boardComponent = new FilmContainerView({isExtra: true, title: 'Top rated'});
@@ -21,7 +21,7 @@ export default class TopRatedFilmsPresenter {
     render(this.filmListComponent, this.boardComponent.element);
 
     for (let i = 0; i < TOP_RATED_CARDS_TO_SHOW; i++) {
-      render(new CardView(this.movies[i]), this.filmListComponent.element)
+      render(new CardView(this.movies[i]), this.filmListComponent.element);
     }
   }
 }

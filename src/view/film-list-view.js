@@ -1,10 +1,10 @@
-import {createElement} from "../render";
+import {createElement} from '../render';
 
 function createFilmListView () {
   return (`
     <div class="films-list__container">
     </div>
-  `)
+  `);
 }
 
 export default class FilmListView {
@@ -16,7 +16,7 @@ export default class FilmListView {
 
   get element() {
     if(!this.#element) {
-      this.#element = createElement(this.template)
+      this.#element = createElement(this.template);
     }
 
     return this.#element;

@@ -1,9 +1,9 @@
-import ApiService from "../framework/api-service";
+import ApiService from '../framework/api-service';
 
-export default class CommentsApiService extends  ApiService {
+export default class CommentsApiService extends ApiService {
   id;
 
-  constructor(endPoint, authorization,  id) {
+  constructor(endPoint, authorization, id) {
     super(endPoint, authorization);
 
     this.id = id;

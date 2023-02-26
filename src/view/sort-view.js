@@ -1,4 +1,4 @@
-import {createElement} from "../render";
+import {createElement} from '../render';
 
 function createSortViewTemplate() {
   return(`
@@ -7,7 +7,7 @@ function createSortViewTemplate() {
       <li><a href="#" class="sort__button">Sort by date</a></li>
       <li><a href="#" class="sort__button">Sort by rating</a></li>
     </ul>
-  `)
+  `);
 }
 
 export default class SortView {

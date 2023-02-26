@@ -1,10 +1,10 @@
-import FilmContainerView from "../view/film-container-view";
-import FilmListView from "../view/film-list-view";
-import {render} from "../render";
-import CardView from "../view/card-view";
-import ShowMoreButtonView from "../view/show-more-button-view";
-import {CARDS_TO_SHOW} from "../const";
-import PopupView from "../view/popup-view";
+import FilmContainerView from '../view/film-container-view';
+import FilmListView from '../view/film-list-view';
+import {render} from '../render';
+import CardView from '../view/card-view';
+import ShowMoreButtonView from '../view/show-more-button-view';
+import {CARDS_TO_SHOW} from '../const';
+import PopupView from '../view/popup-view';
 
 export default class AllFilmsPresenter {
   #boardComponent = new FilmContainerView();
@@ -25,14 +25,12 @@ export default class AllFilmsPresenter {
     render(this.#filmListComponent, this.#boardComponent.element);
 
     for (let i = 0; i < CARDS_TO_SHOW; i++) {
-      this.#renderCard(this.movies[i])
+      this.#renderCard(this.movies[i]);
     }
 
     if(this.movies.length > CARDS_TO_SHOW) {
       render(new ShowMoreButtonView(), this.#boardComponent.element);
     }
-
-    //render(new PopupView(this.movies[0], this.comments[this.movies[0].id]), this.bodyElement);
   }
 
   #renderCard(movie) {
@@ -50,9 +48,10 @@ export default class AllFilmsPresenter {
 
     const escKeyDownHandler = (evt) => {
       if (evt.key === 'Escape' || evt.key === 'Esc') {
-        evt.preventDefault()
+        evt.preventDefault();
         removePopup();
         document.removeEventListener('keydown', escKeyDownHandler);
+        bodyElement.classList.remove('hide-overflow');
       }
     };
 
@@ -70,5 +69,5 @@ export default class AllFilmsPresenter {
 
 
     render(cardComponent, this.#filmListComponent.element);
-  };
+  }
 }

@@ -1,32 +1,32 @@
-import {createElement} from "../render";
-import dayjs from "dayjs";
-import {EMOJI} from "../const";
-let duration = require('dayjs/plugin/duration');
+import {createElement} from '../render';
+import dayjs from 'dayjs';
+import {EMOJI} from '../const';
+import duration from 'dayjs/plugin/duration';
 dayjs.extend(duration);
-let relativeTime = require('dayjs/plugin/relativeTime');
+import relativeTime from 'dayjs/plugin/relativeTime';
 dayjs.extend(relativeTime);
 
 function createGenreTemplate(genres) {
   return genres.map((genre) =>
-      `<span class="film-details__genre">${genre}</span>`).join('');
+    `<span class="film-details__genre">${genre}</span>`).join('');
 }
 
 function createCommentTemplate(comments) {
   return comments.map((comment) =>
-      `
-              <li class="film-details__comment">
-                <span class="film-details__comment-emoji">
-                  <img src="./images/emoji/${comment.emotion}.png" width="55" height="55" alt="emoji-${comment.emotion}">
-                </span>
-                <div>
-                  <p class="film-details__comment-text">${comment.comment}</p>
-                  <p class="film-details__comment-info">
-                    <span class="film-details__comment-author">${comment.author}</span>
-                    <span class="film-details__comment-day">${dayjs(comment.date).fromNow()}</span>
-                    <button class="film-details__comment-delete">Delete</button>
-                  </p>
-                </div>
-              </li>
+    `
+      <li class="film-details__comment">
+        <span class="film-details__comment-emoji">
+          <img src="./images/emoji/${comment.emotion}.png" width="55" height="55" alt="emoji-${comment.emotion}">
+        </span>
+        <div>
+          <p class="film-details__comment-text">${comment.comment}</p>
+          <p class="film-details__comment-info">
+            <span class="film-details__comment-author">${comment.author}</span>
+            <span class="film-details__comment-day">${dayjs(comment.date).fromNow()}</span>
+            <button class="film-details__comment-delete">Delete</button>
+          </p>
+        </div>
+      </li>
       `).join('');
 }
 
@@ -36,7 +36,7 @@ function createEmojiTemplate() {
     <label class="film-details__emoji-label" for="emoji-${emoji}">
       <img src="./images/emoji/${emoji}.png" width="30" height="30" alt="${emoji}">
     </label>
-  `).join('')
+  `).join('');
 }
 
 function createPopupTemplate (movie, comments) {

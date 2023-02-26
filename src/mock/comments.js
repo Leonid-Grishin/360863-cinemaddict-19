@@ -320,6 +320,6 @@ const mockComments = {
       "id": "43",
     },
   ],
-}
+};
 
 export {mockComments};

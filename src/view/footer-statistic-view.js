@@ -1,4 +1,4 @@
-import {createElement} from "../render";
+import {createElement} from '../render';
 
 function createFooterStatisticTemplate(count) {
   return (`
@@ -13,7 +13,7 @@ export default class FooterStatisticView {
 
   constructor({moviesModel}) {
     this.#moviesModel = moviesModel;
-    this.#moviesCount = this.#moviesModel.movies.length
+    this.#moviesCount = this.#moviesModel.movies.length;
   }
 
   get template () {

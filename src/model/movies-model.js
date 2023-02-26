@@ -1,4 +1,4 @@
-import {mockMovies} from "../mock/movies";
+import {mockMovies} from '../mock/movies';
 
 export default class MoviesModel {
   #movies = mockMovies;
@@ -10,16 +10,16 @@ export default class MoviesModel {
   #adaptToClient(movie) {
     const releaseValue = {...movie.film_info.release,
       releaseCountry: movie.film_info.release.release_country
-    }
+    };
 
-    delete releaseValue['release_country']
+    delete releaseValue['release_country'];
 
     const filmInfoValue = {...movie.film_info,
       ageRating: movie.film_info.age_rating,
       totalRating: movie.film_info.total_rating,
       alternativeTitle: movie.film_info.alternative_title,
       release: releaseValue,
-    }
+    };
 
     delete filmInfoValue['age_rating'];
     delete filmInfoValue['total_rating'];
@@ -28,7 +28,7 @@ export default class MoviesModel {
     const userDetailsValue = {...movie.user_details,
       alreadyWatched: movie.user_details.already_watched,
       watchingDate: movie.user_details.watching_date,
-    }
+    };
 
     delete userDetailsValue['already_watched'];
     delete userDetailsValue['watching_date'];
@@ -36,7 +36,7 @@ export default class MoviesModel {
     const adaptedMovie = {... movie,
       filmInfo: filmInfoValue,
       userDetails: userDetailsValue,
-    }
+    };
 
     delete adaptedMovie['film_info'];
     delete adaptedMovie['user_details'];

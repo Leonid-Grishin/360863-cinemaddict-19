@@ -1,7 +1,7 @@
-import {createElement} from "../render";
-import dayjs from "dayjs";
-import {truncateString} from "../utils";
-import {CARD_DESCRIPTION_LENGTH} from "../const";
+import {createElement} from '../render';
+import dayjs from 'dayjs';
+import {truncateString} from '../utils';
+import {CARD_DESCRIPTION_LENGTH} from '../const';
 
 function createGenresTemplate(genres) {
   return genres.map((genre) => `
@@ -10,7 +10,7 @@ function createGenresTemplate(genres) {
 }
 
 function createCardTemplate (movie) {
-  const genresTemplate = createGenresTemplate(movie.filmInfo.genre)
+  const genresTemplate = createGenresTemplate(movie.filmInfo.genre);
 
   return (`
     <article class="film-card">
@@ -32,7 +32,7 @@ function createCardTemplate (movie) {
         <button class="film-card__controls-item film-card__controls-item--favorite ${movie.userDetails.favorite ? 'film-card__controls-item--active' : ''}" type="button">${movie.userDetails.favorite ? 'In favorite' : 'Mark as favorite'}</button>
       </div>
     </article>
-  `)
+  `);
 }
 
 export default class CardView {

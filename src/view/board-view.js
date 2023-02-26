@@ -1,11 +1,11 @@
-import {createElement} from "../render";
+import {createElement} from '../render';
 
 function createBoardTemplate () {
   return (`
   <section class="films">
 
   </section>
-  `)
+  `);
 }
 
 export default class BoardView {
